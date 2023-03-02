@@ -51,7 +51,7 @@ class _SharedPreferencesTestWidgetState
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.fromLTRB(30, 10, 30, 10),
+                      padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                       child: TextField(
                         controller: _controller,
                         decoration: const InputDecoration(
@@ -62,9 +62,9 @@ class _SharedPreferencesTestWidgetState
                                 maxHeight: 50.0, maxWidth: 500.0)),
                       ),
                     ),
-                    const SizedBox(height: 45),
+                    const SizedBox(height: 30),
                     _IntegerExample(),
-                    const SizedBox(height: 45),
+                    const SizedBox(height: 30),
                     Text(
                       snapshot.data!.getString('name').toString(),
                       style: const TextStyle(
@@ -88,7 +88,7 @@ class _SharedPreferencesTestWidgetState
                         ),
                       ),
                     ),
-                    const SizedBox(height: 10),
+                    const SizedBox(height: 8),
                     Text(
                       snapshot.data!.getBool('isPresent').toString(),
                       style: const TextStyle(
@@ -126,24 +126,24 @@ class __IntegerExampleState extends State<_IntegerExample> {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        const SizedBox(height: 16),
-        Text('Horizontal', style: Theme.of(context).textTheme.headline6),
+        Text('Horizontal', style: Theme.of(context).textTheme.titleLarge),
+        const SizedBox(height: 12),
         NumberPicker(
           value: _currentHorizontalIntValue,
           minValue: 0,
           maxValue: 100,
           step: 10,
-          itemHeight: 100,
+          itemHeight: 80,
           axis: Axis.horizontal,
           onChanged: (value) =>
               setState(() => _currentHorizontalIntValue = value),
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16),
+            borderRadius: BorderRadius.circular(10),
             border: Border.all(color: Colors.black26),
           ),
         ),
         const SizedBox(
-          height: 20.0,
+          height: 12.0,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -168,7 +168,7 @@ class __IntegerExampleState extends State<_IntegerExample> {
                 sp.setInt('age', _currentHorizontalIntValue);
               },
               backgroundColor: Colors.blueAccent,
-              child: const Text("Submit"),
+              child: const Text("Add"),
             )
           ],
         ),

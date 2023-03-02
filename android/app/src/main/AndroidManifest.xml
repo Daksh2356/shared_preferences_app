@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.try_new">
    <application
-        android:label="try_new"
+        android:label="shared-pref-app"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
